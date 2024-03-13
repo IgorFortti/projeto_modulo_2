@@ -10,13 +10,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Somador',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
             seedColor: const Color.fromARGB(255, 177, 234, 140)),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Somador'),
     );
   }
 }
@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _desafio1() {
-    int A = 10;
+    int A = 11;
     int B = 15;
 
     int maior = A > B ? A : B;
@@ -53,6 +53,32 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+
+  void _desafio16() {
+    String palavra = "ALA";
+    if (Palindromo(palavra)) {
+      print("$palavra é um políndromo");
+    } else {
+      print("$palavra não é um palíndromo");
+    }
+  setState(() {
+      _result = palavra.toString();
+    });
+  
+  }
+
+  bool Palindromo(String texto) {
+    texto = texto.replaceAll(RegExp(r'[^a-zA-Z]'), '');
+
+    texto = texto.toLowerCase();
+
+    String textoInvertido = texto.split('').reversed.join('');
+
+    return texto == textoInvertido;
+  }
+  
+  
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'O resultado é: ',
+              'Número atual de cliques:',
               style: Theme.of(context).textTheme.bodyLarge,
             ),
             Text(
@@ -76,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio1,
+        onPressed: _desafio16,
         tooltip: 'Increment',
         child: const Icon(Icons.check_circle_outline_outlined),
       ),
