@@ -56,6 +56,25 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+/////////////////////////////////// DESAFIO 5 ////////////////////////////////////////////////////
+void _desafio5() {
+  int valorA = 4;
+  int valorB = 5;
+  int resultado;
+
+  if (valorA == valorB) {
+    resultado = valorA + valorB;
+  } else {
+    resultado = valorA * valorB;
+  }
+  
+   setState(() {
+      _result = resultado.toString();
+    });
+
+}
+
+
 /////////////////////////////////// DESAFIO 9 ////////////////////////////////////////////////////
 
   void _desafio9() {
@@ -153,7 +172,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio13,
+        onPressed: _desafio5,
         tooltip: 'Increment',
         child: const Icon(Icons.check_circle_outline_outlined),
       ),
