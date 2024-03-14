@@ -41,18 +41,38 @@ class _MyHomePageState extends State<MyHomePage> {
       _result = _counter.toString();
     });
   }
+/////////////////////////////////////////  DESAFIO 1 /////////////////////////////////////////////
 
   void _desafio1() {
     int A = 11;
     int B = 15;
 
-    int maior = A > B ? A : B;
+    int maior = A >= B ? A : B;
 
     setState(() {
       _result = maior.toString();
     });
   }
 
+/////////////////////////////////// DESAFIO 9 ////////////////////////////////////////////////////
+
+  void _desafio9() {
+    String nome = "Paulo";
+    int idade = 17;
+    String mensagem;
+
+    if (idade >= 18) {
+      mensagem = "$nome, é maior de idade.";
+    } else {
+      mensagem = "$nome, é menor de idade.";
+    }
+
+    setState(() {
+      _result = mensagem;
+    });
+  }
+
+//////////////////////////////////   DESAFIO 16 //////////////////////////////////////////////////
 
   void _desafio16() {
     String palavra = "ALA";
@@ -61,10 +81,9 @@ class _MyHomePageState extends State<MyHomePage> {
     } else {
       print("$palavra não é um palíndromo");
     }
-  setState(() {
+    setState(() {
       _result = palavra.toString();
     });
-  
   }
 
   bool Palindromo(String texto) {
@@ -76,9 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return texto == textoInvertido;
   }
-  
-  
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio16,
+        onPressed: _desafio9,
         tooltip: 'Increment',
         child: const Icon(Icons.check_circle_outline_outlined),
       ),
