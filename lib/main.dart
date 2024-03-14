@@ -54,17 +54,20 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
 
-  void _desafio16() {
-    String palavra = "ALA";
+ void _desafio16() {
+    String palavra = "AMA";
     if (Palindromo(palavra)) {
-      print("$palavra é um políndromo");
+      
+       setState(() {
+        _result = "$palavra é um palíndromo";
+      });
     } else {
-      print("$palavra não é um palíndromo");
-    }
-  setState(() {
-      _result = palavra.toString();
+    
+       setState(() {
+      _result = "$palavra não é um políndromo";
     });
-  
+    }
+
   }
 
   bool Palindromo(String texto) {
@@ -76,7 +79,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return texto == textoInvertido;
   }
-  
   
   
   @override
