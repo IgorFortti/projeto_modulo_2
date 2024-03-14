@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -72,6 +74,38 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+//////////////////////////////////// DESAFIO 13 ///////////////////////////////////////////////////
+
+  void _desafio13() {
+    List<int> numeros = [];
+    Random random = Random();
+
+    int par = 0;
+    int impar = 0;
+
+    for (int i = 0; i < 10; i++) {
+      numeros.add(random.nextInt(100));
+    }
+
+    String lista = "Lista de números: $numeros\n";
+
+    for (int numero in numeros) {
+      if (numero % 2 == 0) {
+        par++;
+      } else {
+        impar++;
+      }
+    }
+
+    lista += "números pares: $par\n";
+    lista += "números impares: $impar";
+
+    
+    setState(() {
+      _result = lista;
+    });
+  }
+
 //////////////////////////////////   DESAFIO 16 //////////////////////////////////////////////////
 
   void _desafio16() {
@@ -119,7 +153,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio9,
+        onPressed: _desafio13,
         tooltip: 'Increment',
         child: const Icon(Icons.check_circle_outline_outlined),
       ),
