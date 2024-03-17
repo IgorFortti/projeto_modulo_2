@@ -58,7 +58,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   ///////////////////////////////// DESAFIO 2 ////////////////////////////////////////////////////
   
-  void _desafio2(int a, int b, int c) {
+  void _desafio2() {
+    int a = 10;
+    int b = 15;
+    int c = 20;
+
     int sum = a + b;
   
     print('A + B = $sum');
