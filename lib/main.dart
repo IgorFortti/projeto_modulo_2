@@ -129,6 +129,13 @@ class _MyHomePageState extends State<MyHomePage> {
     print('O sucessor de $numero é $sucessor.');
   }
 
+/////////////////////////////////// DESAFIO 7 ////////////////////////////////////////////////////
+
+  void _desafio7(double minimumWage, double userWage) {
+    double amountMinimumWages = userWage / minimumWage;
+  
+    print('O usuário ganha ${amountMinimumWages.toStringAsFixed(2)} salários mínimos.');
+  }
 /////////////////////////////////// DESAFIO 9 ////////////////////////////////////////////////////
 
   void _desafio9() {
