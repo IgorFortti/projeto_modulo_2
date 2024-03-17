@@ -74,7 +74,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
 //////////////////////////////////// DESAFIO 3 ////////////////////////////////////////////////////
 
-  int _desafio3(int numero) {
+  int _desafio3() {
+    int numero = 3;
+
     if (numero == 0 || numero == 1) {
       return 1;
     } else {
