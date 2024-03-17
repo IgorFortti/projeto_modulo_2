@@ -44,6 +44,30 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+//////////////////////////////////// DESAFIO 12 ///////////////////////////////////////////////////
+
+  void _desafio12() {
+    List<int> numeros = [];
+    Random random = Random();
+
+    for (int i = 0; i < 10; i++) {
+      numeros.add(random.nextInt(100));
+    }
+
+    int quadrado = 0;
+
+    String lista = "Lista de números: $numeros\n";
+
+    for (int numero in numeros) {
+      quadrado = numero * numero;
+      lista += "$quadrado ";
+    }
+
+    setState(() {
+      _result = lista;
+    });
+  }
+
 //////////////////////////////////// DESAFIO 14 ///////////////////////////////////////////////////
 
   void _desafio14() {
@@ -98,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio14,
+        onPressed: _desafio12,
         tooltip: 'Increment',
         child: const Icon(Icons.check_circle_outline_outlined),
       ),
