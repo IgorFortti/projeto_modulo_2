@@ -119,6 +119,16 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+/////////////////////////////////// DESAFIO 6 /////////////////////////////////////////////////
+
+  void _desafio6(int numero) {
+    int antecessor = numero - 1;
+    int sucessor = numero + 1;
+  
+    print('O antecessor de $numero é $antecessor.');
+    print('O sucessor de $numero é $sucessor.');
+  }
+
 /////////////////////////////////// DESAFIO 9 ////////////////////////////////////////////////////
 
   void _desafio9() {
