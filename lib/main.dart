@@ -56,6 +56,22 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  ///////////////////////////////// DESAFIO 2 ////////////////////////////////////////////////////
+  
+  void _desafio2(int a, int b, int c) {
+    int sum = a + b;
+  
+    print('A + B = $sum');
+  
+    if (sum > c) {
+      print('A + B é maior do que C.');
+    } else if (sum < c) {
+      print('A + B é menor do que C.');
+    } else {
+      print('A + B é igual a C.');
+    }
+  }
+
 /////////////////////////////////// DESAFIO 5 ////////////////////////////////////////////////////
   void _desafio5() {
     int valorA = 5;
