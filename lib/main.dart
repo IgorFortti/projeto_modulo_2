@@ -86,6 +86,22 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+/////////////////////////////////// DESAFIO 4 ////////////////////////////////////////////////////
+
+  void _desafio4(int numero) {
+    if (numero % 2 == 0) {
+      print('$numero é um número par.');
+    } else {
+      print('$numero é um número ímpar.');
+    } 
+  
+    if (numero >= 0) {
+      print('$numero é um número positivo.');
+    } else {
+      print('$numero é um número negativo.');
+    }
+  }
+
 /////////////////////////////////// DESAFIO 5 ////////////////////////////////////////////////////
   void _desafio5() {
     int valorA = 5;
