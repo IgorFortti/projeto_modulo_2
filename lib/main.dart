@@ -72,6 +72,20 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+//////////////////////////////////// DESAFIO 3 ////////////////////////////////////////////////////
+
+  int _desafio3(int numero) {
+    if (numero == 0 || numero == 1) {
+      return 1;
+    } else {
+      int resultado = 1;
+      for (int i = 2; i <= numero; i++) {
+      resultado *= i;
+     }
+    return resultado;
+    }
+  }
+
 /////////////////////////////////// DESAFIO 5 ////////////////////////////////////////////////////
   void _desafio5() {
     int valorA = 5;
