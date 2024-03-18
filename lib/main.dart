@@ -178,7 +178,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 //////////////////////////////////// DESAFIO 3 ////////////////////////////////////////////////////
 
-  int _desafio3() {
+  void _desafio3() {
     int numero = 3;
 
     setState(() {
