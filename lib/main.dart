@@ -64,8 +64,10 @@ class _MyHomePageState extends State<MyHomePage> {
     int c = 20;
 
     int sum = a + b;
-  
-    print('A + B = $sum');
+
+    setState(() {
+      _result = sum.toString();
+    });
   
     if (sum > c) {
       print('A + B é maior do que C.');
