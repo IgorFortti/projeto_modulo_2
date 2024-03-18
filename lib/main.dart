@@ -159,6 +159,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
     int sum = a + b;
 
+    setState(() {
+      _result = sum.toString();
+    });
+  
     print('A + B = $sum');
 
     if (sum > c) {
