@@ -133,9 +133,11 @@ class _MyHomePageState extends State<MyHomePage> {
     lista += "maior número: $maior\n";
     lista += "menor número: $menor";
 
-    setState(() {
-      _result = lista;
-=======
+  setState(() {
+    _result = lista.toString();
+  });
+  }
+   
 /////////////////////////////////////////  DESAFIO 1 /////////////////////////////////////////////
 
   void _desafio1() {
@@ -173,11 +175,10 @@ class _MyHomePageState extends State<MyHomePage> {
       print('A + B é igual a C.');
     }
   }
-}
 
 //////////////////////////////////// DESAFIO 3 ////////////////////////////////////////////////////
 
-  void _desafio3() {
+  int _desafio3() {
     int numero = 3;
 
     setState(() {
