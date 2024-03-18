@@ -274,8 +274,23 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _desafioExtraAgruparAnagramas(List<String> entrada) {
+    Map<String, List<String>> mapaAnagramas = {};
 
-   @override
+    for (String palavra in entrada) {
+      List<String> letrasOrdenadas = palavra.toLowerCase().split('')..sort();
+      String formaCanonica = letrasOrdenadas.join('');
+
+      mapaAnagramas.putIfAbsent(formaCanonica, () => []);
+      mapaAnagramas[formaCanonica]?.add(palavra);
+    }
+
+    setState(() {
+      _result = mapaAnagramas.values.toList().toString();
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -298,7 +313,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio13,
+        onPressed: () => _desafioExtraAgruparAnagramas(['foR' , 'scream', 'CaRs', 'poTatos', 'racs',
+'creams', 'scar' ]),
         tooltip: 'Increment',
         child: const Icon(Icons.check_circle_outline_outlined),
       ),
