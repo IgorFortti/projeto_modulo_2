@@ -57,12 +57,12 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   ///////////////////////////////// DESAFIO 2 ////////////////////////////////////////////////////
-  
+
   void _desafio2(int a, int b, int c) {
     int sum = a + b;
-  
+
     print('A + B = $sum');
-  
+
     if (sum > c) {
       print('A + B é maior do que C.');
     } else if (sum < c) {
@@ -80,9 +80,9 @@ class _MyHomePageState extends State<MyHomePage> {
     } else {
       int resultado = 1;
       for (int i = 2; i <= numero; i++) {
-      resultado *= i;
-     }
-    return resultado;
+        resultado *= i;
+      }
+      return resultado;
     }
   }
 
@@ -90,18 +90,21 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _desafio4() {
     int numero = 1;
-
-    if (numero % 2 == 0) {
-      print('$numero é um número par.');
-    } else {
-      print('$numero é um número ímpar.');
-    } 
-  
-    if (numero >= 0) {
-      print('$numero é um número positivo.');
-    } else {
-      print('$numero é um número negativo.');
-    }
+    setState(() {
+      if (numero % 2 == 0) {
+        if (numero >= 0) {
+          _result = 'O número $numero é positivo e par.';
+        } else {
+          _result = 'O número $numero é negativo e par.';
+        }
+      } else {
+        if (numero >= 0) {
+          _result = 'O número $numero é positivo e ímpar.';
+        } else {
+          _result = 'O número $numero é negativo e ímpar.';
+        }
+      }
+    });
   }
 
 /////////////////////////////////// DESAFIO 5 ////////////////////////////////////////////////////
