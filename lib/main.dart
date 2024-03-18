@@ -44,6 +44,22 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+//////////////////////////////////// DESAFIO 11 ///////////////////////////////////////////////////
+
+  void _desafio11() {
+    int n = 5;
+
+    String lista = "tabuada: \n";
+
+    for (int i = 0; i < 10; i++) {
+      lista += "$n x ${i + 1} = ${(i + 1) * n}\n";
+    }
+
+    setState(() {
+      _result = lista;
+    });
+  }
+
 //////////////////////////////////// DESAFIO 12 ///////////////////////////////////////////////////
 
   void _desafio12() {
@@ -122,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio12,
+        onPressed: _desafio11,
         tooltip: 'Increment',
         child: const Icon(Icons.check_circle_outline_outlined),
       ),
