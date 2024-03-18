@@ -57,16 +57,16 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   ///////////////////////////////// DESAFIO 2 ////////////////////////////////////////////////////
-  
+
   void _desafio2() {
     int a = 10;
     int b = 15;
     int c = 20;
 
     int sum = a + b;
-  
+
     print('A + B = $sum');
-  
+
     if (sum > c) {
       print('A + B é maior do que C.');
     } else if (sum < c) {
@@ -86,9 +86,9 @@ class _MyHomePageState extends State<MyHomePage> {
     } else {
       int resultado = 1;
       for (int i = 2; i <= numero; i++) {
-      resultado *= i;
-     }
-    return resultado;
+        resultado *= i;
+      }
+      return resultado;
     }
   }
 
@@ -101,8 +101,8 @@ class _MyHomePageState extends State<MyHomePage> {
       print('$numero é um número par.');
     } else {
       print('$numero é um número ímpar.');
-    } 
-  
+    }
+
     if (numero >= 0) {
       print('$numero é um número positivo.');
     } else {
@@ -133,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
     int numero = 8;
     int antecessor = numero - 1;
     int sucessor = numero + 1;
-  
+
     print('O antecessor de $numero é $antecessor.');
     print('O sucessor de $numero é $sucessor.');
   }
@@ -144,8 +144,9 @@ class _MyHomePageState extends State<MyHomePage> {
     double minimumWage = 1412.0;
     double userWage = 2000.0;
     double amountMinimumWages = userWage / minimumWage;
-  
-    print('O usuário ganha ${amountMinimumWages.toStringAsFixed(2)} salários mínimos.');
+
+    print(
+        'O usuário ganha ${amountMinimumWages.toStringAsFixed(2)} salários mínimos.');
   }
 /////////////////////////////////// DESAFIO 9 ////////////////////////////////////////////////////
 
@@ -220,7 +221,61 @@ class _MyHomePageState extends State<MyHomePage> {
     return texto == textoInvertido;
   }
 
-  @override
+  bool isPrime(int n) {
+    if (n <= 1) {
+      return false;
+    }
+
+    for (int i = 2; i <= n / 2; i++) {
+      if (n % i == 0) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+//crie uma lista para salvar do número  do 0 até N em que N é limite
+  void _desafio15(int n) {
+    var lista = [];
+    for (int i = 0; i <= n; i++) {
+      lista.add(i);
+    }
+
+    setState(() {
+      _result = lista.toString();
+    });
+  }
+
+  void _desafio17(int n) {
+    if (isPrime(n)) {
+      setState(() {
+        _result = "$n é primo";
+      });
+    } else {
+      setState(() {
+        _result = "$n não é primo";
+      });
+    }
+  }
+
+  void _desafio18(String frase, String palavra) {
+    List<String> palavrasLista = frase.split(' ');
+    var count = 0;
+
+    for (String i in palavrasLista) {
+      if (i == palavra) {
+        count++;
+      }
+    }
+
+    setState(() {
+      _result = count.toString();
+    });
+  }
+
+
+   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
