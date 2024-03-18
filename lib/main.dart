@@ -88,7 +88,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
 /////////////////////////////////// DESAFIO 4 ////////////////////////////////////////////////////
 
-  void _desafio4(int numero) {
+  void _desafio4() {
+    int numero = 1;
+
     if (numero % 2 == 0) {
       print('$numero é um número par.');
     } else {
