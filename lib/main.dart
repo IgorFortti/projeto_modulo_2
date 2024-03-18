@@ -144,8 +144,10 @@ class _MyHomePageState extends State<MyHomePage> {
     double minimumWage = 1412.0;
     double userWage = 2000.0;
     double amountMinimumWages = userWage / minimumWage;
-  
-    print('O usuário ganha ${amountMinimumWages.toStringAsFixed(2)} salários mínimos.');
+
+    setState(() {
+      _result = 'O usuário ganha ${amountMinimumWages.toStringAsFixed(2)} salários mínimos.';
+    });
   }
 /////////////////////////////////// DESAFIO 9 ////////////////////////////////////////////////////
 
