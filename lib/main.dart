@@ -56,6 +56,52 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  ///////////////////////////////// DESAFIO 2 ////////////////////////////////////////////////////
+  
+  void _desafio2(int a, int b, int c) {
+    int sum = a + b;
+  
+    print('A + B = $sum');
+  
+    if (sum > c) {
+      print('A + B é maior do que C.');
+    } else if (sum < c) {
+      print('A + B é menor do que C.');
+    } else {
+      print('A + B é igual a C.');
+    }
+  }
+
+//////////////////////////////////// DESAFIO 3 ////////////////////////////////////////////////////
+
+  int _desafio3(int numero) {
+    if (numero == 0 || numero == 1) {
+      return 1;
+    } else {
+      int resultado = 1;
+      for (int i = 2; i <= numero; i++) {
+      resultado *= i;
+     }
+    return resultado;
+    }
+  }
+
+/////////////////////////////////// DESAFIO 4 ////////////////////////////////////////////////////
+
+  void _desafio4(int numero) {
+    if (numero % 2 == 0) {
+      print('$numero é um número par.');
+    } else {
+      print('$numero é um número ímpar.');
+    } 
+  
+    if (numero >= 0) {
+      print('$numero é um número positivo.');
+    } else {
+      print('$numero é um número negativo.');
+    }
+  }
+
 /////////////////////////////////// DESAFIO 5 ////////////////////////////////////////////////////
   void _desafio5() {
     int valorA = 5;
@@ -73,6 +119,25 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+/////////////////////////////////// DESAFIO 6 /////////////////////////////////////////////////
+
+  void _desafio6(int numero) {
+    int antecessor = numero - 1;
+    int sucessor = numero + 1;
+  
+    print('O antecessor de $numero é $antecessor.');
+    print('O sucessor de $numero é $sucessor.');
+  }
+
+/////////////////////////////////// DESAFIO 7 ////////////////////////////////////////////////////
+
+  void _desafio7() {
+    double minimumWage = 1412.0;
+    double userWage = 2000.0;
+    double amountMinimumWages = userWage / minimumWage;
+  
+    print('O usuário ganha ${amountMinimumWages.toStringAsFixed(2)} salários mínimos.');
+  }
 /////////////////////////////////// DESAFIO 9 ////////////////////////////////////////////////////
 
   void _desafio9() {
