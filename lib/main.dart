@@ -339,6 +339,76 @@ class _MyHomePageState extends State<MyHomePage> {
     return texto == textoInvertido;
   }
 
+
+   bool isPrime(int n) {
+    if (n <= 1) {
+      return false;
+    }
+
+    for (int i = 2; i <= n / 2; i++) {
+      if (n % i == 0) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  void _desafio15(int n) {
+    var lista = [];
+    for (int i = 0; i <= n; i++) {
+      lista.add(i);
+    }
+
+    setState(() {
+      _result = lista.toString();
+    });
+  }
+
+  void _desafio17(int n) {
+    if (isPrime(n)) {
+      setState(() {
+        _result = "$n é primo";
+      });
+    } else {
+      setState(() {
+        _result = "$n não é primo";
+      });
+    }
+  }
+
+  void _desafio18(String frase, String palavra) {
+    List<String> palavrasLista = frase.split(' ');
+    var count = 0;
+
+    for (String i in palavrasLista) {
+      if (i == palavra) {
+        count++;
+      }
+    }
+
+    setState(() {
+      _result = count.toString();
+    });
+  }
+
+  void _desafioExtraAgruparAnagramas(List<String> entrada) {
+    Map<String, List<String>> mapaAnagramas = {};
+
+    for (String palavra in entrada) {
+      List<String> letrasOrdenadas = palavra.toLowerCase().split('')..sort();
+      String formaCanonica = letrasOrdenadas.join('');
+
+      mapaAnagramas.putIfAbsent(formaCanonica, () => []);
+      mapaAnagramas[formaCanonica]?.add(palavra);
+    }
+
+    setState(() {
+      _result = mapaAnagramas.values.toList().toString();
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
