@@ -191,16 +191,6 @@ class _MyHomePageState extends State<MyHomePage> {
       _result = resultado.toString();
       }
     });
-
-    if (numero == 0 || numero == 1) {
-      return 1;
-    } else {
-      int resultado = 1;
-      for (int i = 2; i <= numero; i++) {
-        resultado *= i;
-      }
-      return resultado;
-    }
   }
 
 /////////////////////////////////// DESAFIO 4 ////////////////////////////////////////////////////
