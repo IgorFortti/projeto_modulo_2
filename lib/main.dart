@@ -133,11 +133,11 @@ class _MyHomePageState extends State<MyHomePage> {
     lista += "maior número: $maior\n";
     lista += "menor número: $menor";
 
-  setState(() {
-    _result = lista.toString();
-  });
+    setState(() {
+      _result = lista.toString();
+    });
   }
-   
+
 /////////////////////////////////////////  DESAFIO 1 /////////////////////////////////////////////
 
   void _desafio1() {
@@ -181,10 +181,10 @@ class _MyHomePageState extends State<MyHomePage> {
         _result = 1.toString();
       } else {
         int resultado = 1;
-          for (int i = 2; i <= numero; i++) {
+        for (int i = 2; i <= numero; i++) {
           resultado *= i;
         }
-      _result = resultado.toString();
+        _result = resultado.toString();
       }
     });
   }
@@ -248,7 +248,8 @@ class _MyHomePageState extends State<MyHomePage> {
     double amountMinimumWages = userWage / minimumWage;
 
     setState(() {
-      _result = 'O usuário ganha ${amountMinimumWages.toStringAsFixed(2)} salários mínimos.';
+      _result =
+          'O usuário ganha ${amountMinimumWages.toStringAsFixed(2)} salários mínimos.';
     });
   }
 /////////////////////////////////// DESAFIO 9 ////////////////////////////////////////////////////
@@ -268,6 +269,20 @@ class _MyHomePageState extends State<MyHomePage> {
       _result = mensagem;
     });
   }
+
+/////////////////////////////////// DESAFIO 10 ///////////////////////////////////////////////////
+ void _desafio10() {
+  String nome = 'João';
+  int idade = 17;
+
+  String resultado = 'Nome: $nome\n';
+  resultado += (idade >= 18) ? 'Maior de idade' : 'Menor de idade';
+
+  setState(() {
+      _result = resultado;
+    });
+}
+
 
 //////////////////////////////////// DESAFIO 13 ///////////////////////////////////////////////////
 
@@ -324,8 +339,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return texto == textoInvertido;
   }
 
-
-   bool isPrime(int n) {
+  bool isPrime(int n) {
     if (n <= 1) {
       return false;
     }
@@ -393,7 +407,6 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -417,7 +430,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio13,
+        onPressed: _desafio10,
         tooltip: 'Increment',
         child: const Icon(Icons.check_circle_outline_outlined),
       ),
