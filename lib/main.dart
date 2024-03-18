@@ -12,13 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Somador',
+      title: 'FlutterSquad',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
             seedColor: const Color.fromARGB(255, 177, 234, 140)),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Somador'),
+      home: const MyHomePage(title: 'FlutterSquad'),
     );
   }
 }
@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //////////////////////////////////// DESAFIO 11 ///////////////////////////////////////////////////
 
   void _desafio11() {
-    int n = 5;
+    int n = 1;
 
     String lista = "tabuada: \n";
 
@@ -153,28 +153,36 @@ class _MyHomePageState extends State<MyHomePage> {
 
   ///////////////////////////////// DESAFIO 2 ////////////////////////////////////////////////////
 
-  void _desafio2(int a, int b, int c) {
-    int a = 10;
-    int b = 15;
-    int c = 20;
+  void _desafio2() {
+    void verificarSoma(int a, int b, int c) {
+      int soma = a + b;
+      String resultado;
 
-    int sum = a + b;
-
-    setState(() {
-      if (sum > c) {
-        _result = '$sum é maior do que C';
-      } else if (sum < c) {
-        _result = '$sum é menor do que C';
+      if (soma > c) {
+        resultado = '$soma é maior do que $c';
+      } else if (soma < c) {
+        resultado = '$soma é menor do que $c';
       } else {
-        _result = '$sum é igual a C';
+        resultado = '$soma é igual a $c';
       }
-    });
+
+      setState(() {
+        _result = resultado.toString();
+      });
+    }
+
+    int A = 10;
+    int B = 15;
+    int C = 20;
+
+    String resultadoSoma;
+    verificarSoma(A, B, C);
   }
 
 //////////////////////////////////// DESAFIO 3 ////////////////////////////////////////////////////
 
   void _desafio3() {
-    int numero = 3;
+    int numero = 4;
 
     setState(() {
       if (numero == 0 || numero == 1) {
@@ -192,7 +200,7 @@ class _MyHomePageState extends State<MyHomePage> {
 /////////////////////////////////// DESAFIO 4 ////////////////////////////////////////////////////
 
   void _desafio4() {
-    int numero = 1;
+    int numero = -2;
     setState(() {
       if (numero % 2 == 0) {
         if (numero >= 0) {
@@ -212,7 +220,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 /////////////////////////////////// DESAFIO 5 ////////////////////////////////////////////////////
   void _desafio5() {
-    int valorA = 5;
+    int valorA = 4;
     int valorB = 5;
     int resultado;
 
@@ -255,34 +263,43 @@ class _MyHomePageState extends State<MyHomePage> {
 /////////////////////////////////// DESAFIO 9 ////////////////////////////////////////////////////
 
   void _desafio9() {
-    String nome = "Paulo";
-    int idade = 17;
-    String mensagem;
+    String calcularMediaEStatus(List<double> notas) {
+      double soma = 0;
 
-    if (idade >= 18) {
-      mensagem = "$nome, é maior de idade.";
-    } else {
-      mensagem = "$nome, é menor de idade.";
+      for (double nota in notas) {
+        soma += nota;
+      }
+
+      double media = soma / notas.length;
+      String status = media >= 7 ? 'aprovado' : 'reprovado';
+
+      return 'Média do aluno: $media\nSituação: $status';
     }
 
-    setState(() {
-      _result = mensagem;
-    });
+    List<double> notasAluno = [
+      8.5,
+      7.0,
+      6.5,
+      9.0,
+      7.5
+    ]; // Exemplo de notas do aluno
+
+    String resultado = calcularMediaEStatus(notasAluno);
+    print(resultado);
   }
 
 /////////////////////////////////// DESAFIO 10 ///////////////////////////////////////////////////
- void _desafio10() {
-  String nome = 'João';
-  int idade = 17;
+  void _desafio10() {
+    String nome = 'João';
+    int idade = 20;
 
-  String resultado = 'Nome: $nome\n';
-  resultado += (idade >= 18) ? 'Maior de idade' : 'Menor de idade';
+    String resultado = 'Nome: $nome\n';
+    resultado += (idade >= 18) ? 'Maior de idade' : 'Menor de idade';
 
-  setState(() {
+    setState(() {
       _result = resultado;
     });
-}
-
+  }
 
 //////////////////////////////////// DESAFIO 13 ///////////////////////////////////////////////////
 
@@ -353,59 +370,119 @@ class _MyHomePageState extends State<MyHomePage> {
     return true;
   }
 
-  void _desafio15(int n) {
-    var lista = [];
-    for (int i = 0; i <= n; i++) {
-      lista.add(i);
-    }
+  List<int> criarLista(int n) {
+  List<int> lista = [];
+  for (int i = 0; i <= n; i++) {
+    lista.add(i);
+  }
+  return lista;
+}
 
-    setState(() {
-      _result = lista.toString();
+void _desafio15() {
+  int limite = 3; 
+  List<int> listaResultado = criarLista(limite);
+
+setState(() {
+        _result = "Sainda: $listaResultado";
+      });  
+
+}
+
+  String verificarPrimo(int n) {
+  if (n <= 1) {
+    return "O número $n não é primo.";
+  }
+
+  for (int i = 2; i <= n / 2; i++) {
+    if (n % i == 0) {
+      return "O número $n não é primo.";
+    }
+  }
+
+  return "O número $n é primo.";
+}
+
+void _desafio17() {
+  int numero = 1; 
+  String resultado = verificarPrimo(numero);
+  setState(() {
+      _result = resultado.toString();
     });
-  }
+}
 
-  void _desafio17(int n) {
-    if (isPrime(n)) {
-      setState(() {
-        _result = "$n é primo";
-      });
-    } else {
-      setState(() {
-        _result = "$n não é primo";
-      });
+
+  int contarPalavraNaFrase(String palavra, String frase) {
+  int contador = 0;
+  String palavraLowerCase = palavra.toLowerCase();
+  String fraseLowerCase = frase.toLowerCase();
+  List<String> palavrasNaFrase = fraseLowerCase.split(' ');
+
+  for (String palavraFrase in palavrasNaFrase) {
+    if (palavraFrase == palavraLowerCase) {
+      contador++;
     }
   }
 
-  void _desafio18(String frase, String palavra) {
-    List<String> palavrasLista = frase.split(' ');
-    var count = 0;
+  return contador;
+}
 
-    for (String i in palavrasLista) {
-      if (i == palavra) {
-        count++;
-      }
-    }
+void _desafio18() {
+  String palavra = "gato";
+  String frase = "O gato preto pulou o muro, mas o Gato Branco não.";
 
+  int vezesPalavraAparece = contarPalavraNaFrase(palavra, frase);
+  print("A palavra '$palavra' aparece $vezesPalavraAparece vezes na frase.");
+  
     setState(() {
-      _result = count.toString();
+      _result = "A palavra '$palavra' aparece '$vezesPalavraAparece' vezes na frase.".toString();
     });
+
+}
+
+
+ 
+
+
+
+void _desafioExtra() {
+  List<String> entrada = ['foR', 'scream', 'CaRs', 'poTatos', 'racs', 'creams', 'scar'];
+  String resultado = agruparAnagramas(entrada);
+  
+  setState(() {
+    _result = resultado;
+  });
+}
+
+String agruparAnagramas(List<String> palavras) {
+  Map<String, List<String>> mapaAnagramas = {};
+
+  for (String palavra in palavras) {
+  
+    List<String> chaveOrdenada = palavra.toLowerCase().split('')..sort();
+    String chave = chaveOrdenada.join();
+
+    
+    mapaAnagramas.putIfAbsent(chave, () => []);
+    mapaAnagramas[chave]!.add(palavra);
   }
 
-  void _desafioExtraAgruparAnagramas(List<String> entrada) {
-    Map<String, List<String>> mapaAnagramas = {};
+ 
+  List<List<String>> gruposAnagramas = mapaAnagramas.values.toList();
 
-    for (String palavra in entrada) {
-      List<String> letrasOrdenadas = palavra.toLowerCase().split('')..sort();
-      String formaCanonica = letrasOrdenadas.join('');
-
-      mapaAnagramas.putIfAbsent(formaCanonica, () => []);
-      mapaAnagramas[formaCanonica]?.add(palavra);
-    }
-
-    setState(() {
-      _result = mapaAnagramas.values.toList().toString();
+ 
+  String resultado = gruposAnagramas.toString();
+  
+  setState(() {
+      _result = resultado.toString();
     });
-  }
+
+  return resultado;
+ 
+
+}
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -430,7 +507,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio10,
+        onPressed: _desafioExtra,
         tooltip: 'Increment',
         child: const Icon(Icons.check_circle_outline_outlined),
       ),
