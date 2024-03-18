@@ -44,6 +44,29 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+//////////////////////////////////// DESAFIO 8 ///////////////////////////////////////////////////
+
+  void _desafio8() {
+    Random random = Random();
+    List<int> numeros = [];
+    List<int> numerosOrdenados = [];
+
+    for (int i = 0; i < 3; i++) {
+      numeros.add(random.nextInt(100));
+    }
+
+    String lista = "Números em Ordem Decrescente: ";
+
+    numeros.sort((a, b) => b.compareTo(a));
+    for (int numero in numeros) {
+      lista += "$numero ";
+    }
+
+    setState(() {
+      _result = lista;
+    });
+  }
+
 //////////////////////////////////// DESAFIO 11 ///////////////////////////////////////////////////
 
   void _desafio11() {
@@ -138,7 +161,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio11,
+        onPressed: _desafio8,
         tooltip: 'Increment',
         child: const Icon(Icons.check_circle_outline_outlined),
       ),
