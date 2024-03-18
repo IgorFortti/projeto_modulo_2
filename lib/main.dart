@@ -158,22 +158,17 @@ class _MyHomePageState extends State<MyHomePage> {
     int b = 15;
     int c = 20;
 
-
     int sum = a + b;
 
     setState(() {
-      _result = sum.toString();
+      if (sum > c) {
+        _result = '$sum é maior do que C';
+      } else if (sum < c) {
+        _result = '$sum é menor do que C';
+      } else {
+        _result = '$sum é igual a C';
+      }
     });
-  
-    print('A + B = $sum');
-
-    if (sum > c) {
-      print('A + B é maior do que C.');
-    } else if (sum < c) {
-      print('A + B é menor do que C.');
-    } else {
-      print('A + B é igual a C.');
-    }
   }
 
 //////////////////////////////////// DESAFIO 3 ////////////////////////////////////////////////////
