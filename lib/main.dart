@@ -43,6 +43,99 @@ class _MyHomePageState extends State<MyHomePage> {
       _result = _counter.toString();
     });
   }
+
+//////////////////////////////////// DESAFIO 8 ///////////////////////////////////////////////////
+
+  void _desafio8() {
+    Random random = Random();
+    List<int> numeros = [];
+    List<int> numerosOrdenados = [];
+
+    for (int i = 0; i < 3; i++) {
+      numeros.add(random.nextInt(100));
+    }
+
+    String lista = "Números em Ordem Decrescente: ";
+
+    numeros.sort((a, b) => b.compareTo(a));
+    for (int numero in numeros) {
+      lista += "$numero ";
+    }
+
+    setState(() {
+      _result = lista;
+    });
+  }
+
+//////////////////////////////////// DESAFIO 11 ///////////////////////////////////////////////////
+
+  void _desafio11() {
+    int n = 5;
+
+    String lista = "tabuada: \n";
+
+    for (int i = 0; i < 10; i++) {
+      lista += "$n x ${i + 1} = ${(i + 1) * n}\n";
+    }
+
+    setState(() {
+      _result = lista;
+    });
+  }
+
+//////////////////////////////////// DESAFIO 12 ///////////////////////////////////////////////////
+
+  void _desafio12() {
+    List<int> numeros = [];
+    Random random = Random();
+
+    for (int i = 0; i < 10; i++) {
+      numeros.add(random.nextInt(100));
+    }
+
+    int quadrado = 0;
+
+    String lista = "Lista de números: $numeros\n";
+
+    for (int numero in numeros) {
+      quadrado = numero * numero;
+      lista += "$quadrado ";
+    }
+
+    setState(() {
+      _result = lista;
+    });
+  }
+
+//////////////////////////////////// DESAFIO 14 ///////////////////////////////////////////////////
+
+  void _desafio14() {
+    List<int> numeros = [];
+    Random random = Random();
+
+    for (int i = 0; i < 10; i++) {
+      numeros.add(random.nextInt(100));
+    }
+
+    int maior = numeros[0];
+    int menor = numeros[0];
+
+    String lista = "Lista de números: $numeros\n";
+
+    for (int numero in numeros) {
+      if (numero > maior) {
+        maior = numero;
+      } else if (numero < menor) {
+        menor = numero;
+      }
+    }
+
+    lista += "maior número: $maior\n";
+    lista += "menor número: $menor";
+
+    setState(() {
+      _result = lista;
+=======
 /////////////////////////////////////////  DESAFIO 1 /////////////////////////////////////////////
 
   void _desafio1() {
@@ -57,17 +150,13 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   ///////////////////////////////// DESAFIO 2 ////////////////////////////////////////////////////
-<<<<<<< HEAD
 
   void _desafio2(int a, int b, int c) {
-=======
-  
-  void _desafio2() {
     int a = 10;
     int b = 15;
     int c = 20;
 
->>>>>>> main
+
     int sum = a + b;
 
     print('A + B = $sum');
@@ -80,6 +169,7 @@ class _MyHomePageState extends State<MyHomePage> {
       print('A + B é igual a C.');
     }
   }
+}
 
 //////////////////////////////////// DESAFIO 3 ////////////////////////////////////////////////////
 
