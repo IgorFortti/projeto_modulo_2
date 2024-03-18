@@ -133,9 +133,11 @@ class _MyHomePageState extends State<MyHomePage> {
     int numero = 8;
     int antecessor = numero - 1;
     int sucessor = numero + 1;
-  
-    print('O antecessor de $numero é $antecessor.');
-    print('O sucessor de $numero é $sucessor.');
+
+    setState(() {
+      _result = 'O antecessor de $numero é $antecessor.';
+      _result = 'O sucessor de $numero é $sucessor.';
+    });
   }
 
 /////////////////////////////////// DESAFIO 7 ////////////////////////////////////////////////////
