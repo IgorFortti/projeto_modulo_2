@@ -57,8 +57,17 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   ///////////////////////////////// DESAFIO 2 ////////////////////////////////////////////////////
+<<<<<<< HEAD
 
   void _desafio2(int a, int b, int c) {
+=======
+  
+  void _desafio2() {
+    int a = 10;
+    int b = 15;
+    int c = 20;
+
+>>>>>>> main
     int sum = a + b;
 
     print('A + B = $sum');
@@ -74,7 +83,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
 //////////////////////////////////// DESAFIO 3 ////////////////////////////////////////////////////
 
-  int _desafio3(int numero) {
+  int _desafio3() {
+    int numero = 3;
+
     if (numero == 0 || numero == 1) {
       return 1;
     } else {
@@ -124,6 +135,26 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+/////////////////////////////////// DESAFIO 6 /////////////////////////////////////////////////
+
+  void _desafio6() {
+    int numero = 8;
+    int antecessor = numero - 1;
+    int sucessor = numero + 1;
+  
+    print('O antecessor de $numero é $antecessor.');
+    print('O sucessor de $numero é $sucessor.');
+  }
+
+/////////////////////////////////// DESAFIO 7 ////////////////////////////////////////////////////
+
+  void _desafio7() {
+    double minimumWage = 1412.0;
+    double userWage = 2000.0;
+    double amountMinimumWages = userWage / minimumWage;
+  
+    print('O usuário ganha ${amountMinimumWages.toStringAsFixed(2)} salários mínimos.');
+  }
 /////////////////////////////////// DESAFIO 9 ////////////////////////////////////////////////////
 
   void _desafio9() {
